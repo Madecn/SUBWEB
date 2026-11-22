@@ -101,7 +101,7 @@ let mobileAdvancedOptions = {
     emoji: true,
     append_type: true,
     append_info: true,
-    scv: false,
+    scv: true,
     udp: false,
     list: false,
     sort: false,
@@ -410,12 +410,16 @@ function initializeForm() {
                 const opt = document.createElement('option');
                 opt.value = option.value;
                 opt.textContent = option.label;
-                
-                // Set default selection for "默认版-功能齐全"
                 if (option.label === '默认版-功能齐全') {
-                    opt.selected = true;
+                    // 在“默认版-功能齐全”正上方插入空选项，默认选中它
+                    const defaultOpt = document.createElement('option');
+                    defaultOpt.value = '';
+                    defaultOpt.textContent = '不选择，由接口提供方提供';
+                    defaultOpt.selected = true;
+                    optgroup.appendChild(defaultOpt);
+                    // 备用：如需把默认改回本项，取消下一行注释（后选中的会覆盖前面的默认空选项）
+                    // opt.selected = true;
                 }
-                
                 optgroup.appendChild(opt);
             });
             
