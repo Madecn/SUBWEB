@@ -67,12 +67,15 @@ export const backendConfig = [
         label: '肥羊提供-备用后端',
         value: 'https://api.v1.mk/sub?'
     }, {
-        label: '自建服务',
-        value: 'http://localhost:25500/sub?'
+        label: 'localhost:25500(自建本地服务)',
+        value: 'http://192.168.1.61:25500/sub?'
     }];
 export const externalConfig = [{
     label: 'CM规则',
     options: [{
+        label: 'Vynce 自用简易版(与Github同步)',
+        value: 'https://raw.githubusercontent.com/Madecn/Online_ACL4SSR/refs/heads/main/ACL4SSR_Online_MultiMode.ini'
+    }, {
         label: '默认版-港美优化',
         value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini'
     }, {
